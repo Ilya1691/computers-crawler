@@ -31,14 +31,9 @@ def parse_component(base_url, save_path, type):
 
 def main():
     components = [
-        ('https://m.ulmart.ru/catalog/power_supply2?pageNum=', 'data/search/power_supply.json', 'power_supply'),
-        ('https://m.ulmart.ru/catalog/cpu?pageNum=', 'data/search/cpu.json', 'cpu'),
-        ('https://m.ulmart.ru/catalog/hdd?pageNum=', 'data/search/hdd.json', 'hdd'),
-        ('https://m.ulmart.ru/catalog/drive_pc?pageNum=', 'data/search/drive_pc.json', 'drive_pc'),
-        ('https://m.ulmart.ru/catalog/videocards?pageNum=', 'data/search/videocards.json', 'videocards'),
-        ('https://m.ulmart.ru/catalog/cases_pc?', 'data/search/cases_pc.json', 'cases_pc'),
-        ('https://m.ulmart.ru/catalog/motherboards?pageNum=', 'data/search/motherboards.json', 'motherboards'),
-        ('https://m.ulmart.ru/catalog/memory_for_pc?pageNum=', 'data/search/memory_for_pc.json', 'memory_for_pc')
+        ('https://topcomputer.ru/catalog/87/?PAGEN_1=', 'data/search/work_office.json', 'work_office'),
+        ('https://topcomputer.ru/catalog/85/?PAGEN_1=', 'data/search/home', 'home'),
+        ('https://topcomputer.ru/catalog/86/?PAGEN_1=', 'data/search/games', 'games'),
     ]
 
     for (url, path, type) in components:
