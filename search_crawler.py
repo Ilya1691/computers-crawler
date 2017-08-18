@@ -32,8 +32,8 @@ def parse_component(base_url, save_path, type):
 def main():
     components = [
         ('https://topcomputer.ru/catalog/87/?PAGEN_1=', 'data/search/work_office.json', 'work_office'),
-        ('https://topcomputer.ru/catalog/85/?PAGEN_1=', 'data/search/home', 'home'),
-        ('https://topcomputer.ru/catalog/86/?PAGEN_1=', 'data/search/games', 'games'),
+        ('https://topcomputer.ru/catalog/85/?PAGEN_1=', 'data/search/home.json', 'home'),
+        ('https://topcomputer.ru/catalog/86/?PAGEN_1=', 'data/search/games.json', 'games'),
     ]
 
     for (url, path, type) in components:

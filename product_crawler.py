@@ -15,14 +15,9 @@ def parse_product(item):
 
 def main():
     search_items = [
-        ('data/search/motherboards.json', 'data/product/motherboards.json'),
-        ('data/search/cpu.json', 'data/product/cpu.json'),
-        ('data/search/memory_for_pc.json', 'data/product/memory_for_pc.json'),
-        ('data/search/videocards.json', 'data/product/videocards.json'),
-        ('data/search/cases_pc.json', 'data/product/cases_pc.json'),
-        ('data/search/hdd.json', 'data/product/hdd.json'),
-        ('data/search/power_supply.json', 'data/product/power_supply.json'),
-        ('data/search/drive_pc.json', 'data/product/drive_pc.json')
+        ('data/search/work_office.json', 'data/case/work_office.json'),
+        ('data/search/home', 'data/case/home.json'),
+        ('data/search/games', 'data/case/games.json'),
     ]
 
     for (search_path, product_path) in search_items:

@@ -2,15 +2,12 @@ import json
 
 
 class ProductItem:
-    def __init__(self, id, url, rating, name, price, type, brand, model, characteristics):
+    def __init__(self, id, url, name, price, type, characteristics):
         self.id = id
         self.url = url
-        self.rating = rating
         self.name = name
         self.price = price
         self.type = type
-        self.brand = brand
-        self.model = model
         self.characteristics = characteristics
 
     @classmethod

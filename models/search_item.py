@@ -2,10 +2,9 @@ import json
 
 
 class SearchItem:
-    def __init__(self, id, url, rating, name, price, type):
+    def __init__(self, id, url, name, price, type):
         self.id = id
         self.url = url
-        self.rating = rating
         self.name = name
         self.price = price
         self.type = type
