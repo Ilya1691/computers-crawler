@@ -9,13 +9,13 @@ class ProductParser:
     def parse(self, html, search_item):
         soup = BeautifulSoup(html, "lxml")
 
-        product_items = soup.find_all('div', {'class': 'table_good_properties'})
+        product_items = soup.find_all('table', {'class': 'table_good_properties'})
 
         product_ch = {}
 
         for item in product_items:
-            name = item.find('div', {'class': 'group_prop'}).text
-            value = item.find('div', {'class': 'prop_name'}).text
+            name = item.find('td', {'class': 'group_prop'}).text
+            value = item.find('td', {'class': 'prop_name'}).text
 
             if name in self.product_characteristics:
                 param_name = self.product_characteristics[name]

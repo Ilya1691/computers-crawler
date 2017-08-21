@@ -1,7 +1,7 @@
 class ProductDicts:
 
     product_characteristics = {
-        "Процессор:": "processor",
+        "Процессор": "processor",
         "Тактовая частота процессора": "clock_frequency",
         "Кол-во ядер": "NumberOfCores",
         "Сокет": "socket",
