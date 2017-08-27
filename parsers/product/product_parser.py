@@ -15,10 +15,11 @@ class ProductParser:
 
         for row in table.find_all({'tr'}):
             col = row.find_all({'td'})
-            name = row.find('td').text
-            for param in col:
-                value = param.text
 
+            if len(col)!=2:
+                continue
+            name = col[0].text.strip()
+            value = col[1].text.strip()
 
             if name in self.product_characteristics:
                 param_name = self.product_characteristics[name]
