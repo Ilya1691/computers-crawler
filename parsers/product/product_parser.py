@@ -9,13 +9,16 @@ class ProductParser:
     def parse(self, html, search_item):
         soup = BeautifulSoup(html, "lxml")
 
-        product_items = soup.find_all('table', {'class': 'table_good_properties'})
+        table = soup.find('table', {'class': 'table_good_properties'})
 
         product_ch = {}
 
-        for item in product_items:
-            name = item.find('td', {'class': 'group_prop'}).text
-            value = item.find('td', {'class': 'prop_name'}).text
+        for row in table.find_all({'tr'}):
+            col = row.find_all({'td'})
+            name = row.find('td').text
+            for param in col:
+                value = param.text
+
 
             if name in self.product_characteristics:
                 param_name = self.product_characteristics[name]
