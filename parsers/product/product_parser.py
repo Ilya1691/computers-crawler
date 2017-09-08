@@ -8,7 +8,7 @@ class ProductParser:
 
     def parse(self, html, search_item):
         soup = BeautifulSoup(html, "lxml")
-
+        a = []
         table = soup.find('table', class_='table_good_properties')
         product_ch = {}
 
@@ -22,8 +22,13 @@ class ProductParser:
 
 
             if name in self.product_characteristics:
-                param_name = self.product_characteristics[name]
-                product_ch[param_name] = value
+                if name == "Форм-фактор:":
+                    a.append(value)
+                    param_name = self.product_characteristics[name]
+                    product_ch[param_name] = a[0]
+                if name != "Форм-фактор:":
+                    param_name = self.product_characteristics[name]
+                    product_ch[param_name] = value
 
         product = ProductItem(
             id=search_item.id,

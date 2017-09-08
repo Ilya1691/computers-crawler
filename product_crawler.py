@@ -15,7 +15,7 @@ def parse_product(item):
 
 def main():
     search_items = [
-        ('data/search/work_office.json', 'data/case/work_office.json'),
+     #   ('data/search/work_office.json', 'data/case/work_office.json'),
         ('data/search/home.json', 'data/case/home.json'),
         ('data/search/games.json', 'data/case/games.json')
     ]

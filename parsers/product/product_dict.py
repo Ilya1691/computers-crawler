@@ -12,5 +12,6 @@ class ProductDicts:
         "Объем жесткого диска:": "volume_hdd",
         "Видеокарта:": "videocarta",
         "Объем видеопамяти:": "volume_video",
+        "Форм-фактор:": "Form_fac_Case",
         "Мощность блока питания:": "PowerSupply",
     }
