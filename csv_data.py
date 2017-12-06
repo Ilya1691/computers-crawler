@@ -23,8 +23,9 @@ def main():
 
     load_json = [
         'data/case/work_office.json',
+        'data/case/games.json',
         'data/case/home.json',
-        'data/case/games.json']
+    ]
 
 
     for json_path in load_json:
@@ -37,7 +38,7 @@ def main():
             NumberOfCores = item.characteristics['NumberOfCores']
             socket = item.characteristics['socket']
             clock_frequency = item.characteristics['clock_frequency']
-            Form_factor = item.characteristics['Form_factor']
+            Form_factor = item.characteristics['Form_fac_Case']
             volume_ram = item.characteristics['volume_ram']
             type_ram = item.characteristics['type_ram']
             frequency_ram = item.characteristics['frequency_ram']
@@ -46,25 +47,34 @@ def main():
             PowerSupply = item.characteristics['PowerSupply']
             price = item.price
             type_case = item.type
+            if volume_video == 'SMA':
+                volume_video = 0
+            else:
+                volume_video = re.findall(r'\d+', volume_video)
+                volume_video = volume_video[0]
             NumberOfCores = re.findall(r'\d+', NumberOfCores)
             clock_frequency = re.findall(r'\d+', clock_frequency)
+            clock_frequency = clock_frequency[0] + '.' +  clock_frequency[1]
             volume_ram = re.findall(r'\d+', volume_ram)
             frequency_ram = re.findall(r'\d+', frequency_ram)
-            volume_video = re.findall(r'\d+', volume_video)
-            volume_hdd = re.findall(r'\d+', volume_hdd)
+            if volume_hdd == 'отсутствует':
+                volume_hdd = 0
+            else:
+                volume_hdd = re.findall(r'\d+', volume_hdd)
+                volume_hdd = volume_hdd[0]
             PowerSupply = re.findall(r'\d+', PowerSupply)
 
             data = {
-                'NumberOfCores': NumberOfCores,
+                'NumberOfCores': NumberOfCores[0],
                 'socket': socket,
                 'Form_factor': Form_factor,
                 'type_ram': type_ram,
                 'clock_frequency': clock_frequency,
-                'volume_ram': volume_ram,
-                'frequency_ram': frequency_ram,
+                'volume_ram': volume_ram[0],
+                'frequency_ram': frequency_ram[0],
                 'volume_video': volume_video,
                 'volume_hdd': volume_hdd,
-                'PowerSupply': PowerSupply,
+                'PowerSupply': PowerSupply[0],
                 'price': price,
                 'type_case': type_case
             }
