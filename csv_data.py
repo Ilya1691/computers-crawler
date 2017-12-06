@@ -3,7 +3,7 @@ import re
 import csv
 
 def write_cvs(datas):
-    with open('data/System_case.cvs', 'a') as f:
+    with open('data/System_case.csv', 'a') as f:
         for data in datas:
             writer = csv.writer(f)
             writer.writerow((data['NumberOfCores'],
@@ -39,6 +39,8 @@ def main():
             socket = item.characteristics['socket']
             clock_frequency = item.characteristics['clock_frequency']
             Form_factor = item.characteristics['Form_fac_Case']
+            Form_factor = Form_factor.split(',', maxsplit=1)
+            Form_factor = Form_factor[0]
             volume_ram = item.characteristics['volume_ram']
             type_ram = item.characteristics['type_ram']
             frequency_ram = item.characteristics['frequency_ram']
